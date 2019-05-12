@@ -16,20 +16,27 @@
                 if (playerSelection == "Rock" && computerSelection == "Papper") {
                     displayText = "Computer selected Papper. Papper beats Rock - Computer Wins!"
                     console.log(displayText);
+                    computerScore++;
                 } else if (playerSelection == "Rock" && computerSelection == "Scissors") {
                     displayText = "Computer selected Scissors. Rock beats Scissor - Player wins!";
                     console.log(displayText);
+                    userScore++;
                 } else if (playerSelection == "Papper" && computerSelection == "Rock") {
                     displayText = "Computer selected Rock. Papper beats Rock - Player Wins!";
                     console.log(displayText);
+                    userScore++;
                 } else if (playerSelection == "Papper" && computerSelection == "Scissors") {
                     displayText = "Computer selected Scissors. Scissors beat Papper - Computer Wins!";
                     console.log(displayText);
+                    computerScore++;
                 } else if (playerSelection == "Scissors" && computerSelection == "Rock") {
                     displayText = "Computer selected Rock. Rock beats Scissors - Computer wins!";
                     console.log(displayText);
+                    computerScore++;
                 } else if (playerSelection == "Scissors" && computerSelection == "Papper") {
-                    displayText = "Computer selected Papper. Scissors beats Papper - Player wins!"
+                    displayText = "Computer selected Papper. Scissors beats Papper - Player wins!";
+                    console.log(displayText);
+                    userScore++;
                 } else if (playerSelection == "Rock" && computerSelection == "Rock") {
                     displayText = "Computer selected Rock. Rock ties with Rock - Nobody wins."
                     console.log(displayText);
@@ -46,12 +53,28 @@
                 
             }
 
-            const playerSelection = prompt("Please select between Rock, Papper or Scissors");
-            const computerSelection = computerPlay();
-            console.log(playRound(playerSelection, computerSelection));
+            function capitalize() {
+                let string = prompt("Please select between Rock, Papper or Scissors");
+                return upperCase = string.charAt(0).toUpperCase() + string.slice(1).toLowerCase();
+            }
+
+            let userScore = parseInt(0);
+            let computerScore = parseInt(0);
+            let i = 0;
 
             function game() {
-
+                            
+                const playerSelection = capitalize();
+                const computerSelection = computerPlay();
+                console.log(playRound(playerSelection, computerSelection));
+                console.log("Player Score = " + userScore);
+                console.log("Computer's score = " + computerScore);
+                i++;
+                if (i !== 5) {
+                    game();
+                } else {
+                    console.log("Game Over=> Player("+userScore+") vs Computer("+computerScore+")");
+                }
             }
         </script>
     </body>
