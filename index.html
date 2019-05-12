@@ -5,7 +5,7 @@
     </head>
     <body>
         <script>
-            let choices = ["Rock", "Papper", "Scissors"];
+            let choices = ["Rock", "Paper", "Scissors"];
             
             function computerPlay() {
                 return radomSelection = choices[Math.floor(Math.random() * choices.length)]
@@ -13,48 +13,48 @@
 
             function playRound(playerSelection, computerSelection) {
                                        
-                if (playerSelection == "Rock" && computerSelection == "Papper") {
-                    displayText = "Computer selected Papper. Papper beats Rock - Computer Wins!"
+                if (playerSelection == "Rock" && computerSelection == "Paper") {
+                    displayText = "Computer selected Paper. Paper beats Rock - Computer Wins!"
                     console.log(displayText);
                     computerScore++;
                 } else if (playerSelection == "Rock" && computerSelection == "Scissors") {
                     displayText = "Computer selected Scissors. Rock beats Scissor - Player wins!";
                     console.log(displayText);
                     userScore++;
-                } else if (playerSelection == "Papper" && computerSelection == "Rock") {
-                    displayText = "Computer selected Rock. Papper beats Rock - Player Wins!";
+                } else if (playerSelection == "Paper" && computerSelection == "Rock") {
+                    displayText = "Computer selected Rock. Paper beats Rock - Player Wins!";
                     console.log(displayText);
                     userScore++;
-                } else if (playerSelection == "Papper" && computerSelection == "Scissors") {
-                    displayText = "Computer selected Scissors. Scissors beat Papper - Computer Wins!";
+                } else if (playerSelection == "Paper" && computerSelection == "Scissors") {
+                    displayText = "Computer selected Scissors. Scissors beat Paper - Computer Wins!";
                     console.log(displayText);
                     computerScore++;
                 } else if (playerSelection == "Scissors" && computerSelection == "Rock") {
                     displayText = "Computer selected Rock. Rock beats Scissors - Computer wins!";
                     console.log(displayText);
                     computerScore++;
-                } else if (playerSelection == "Scissors" && computerSelection == "Papper") {
-                    displayText = "Computer selected Papper. Scissors beats Papper - Player wins!";
+                } else if (playerSelection == "Scissors" && computerSelection == "Paper") {
+                    displayText = "Computer selected Paper. Scissors beats Paper - Player wins!";
                     console.log(displayText);
                     userScore++;
                 } else if (playerSelection == "Rock" && computerSelection == "Rock") {
                     displayText = "Computer selected Rock. Rock ties with Rock - Nobody wins."
                     console.log(displayText);
-                } else if (playerSelection == "Papper" && computerSelection == "Papper") {
-                    displayText = "Computer selected Papper. Papper ties with Papper - Nobody wins."
+                } else if (playerSelection == "Paper" && computerSelection == "Paper") {
+                    displayText = "Computer selected Paper. Paper ties with Paper - Nobody wins."
                     console.log(displayText);
                 } else if (playerSelection == "Scissors" && computerSelection == "Scissors") {
                     displayText = "Computer selected Scissors. Scissors ties with Scissors - Nobody wins."
                     console.log(displayText);
                 } else {
-                    displayText = "Invalid selection. You need to choose between Rock, Papper or Scissors.";
+                    displayText = "Invalid selection. You need to choose between Rock, Paper or Scissors.";
                     console.log(displayText);
                 }
                 
             }
 
             function capitalize() {
-                let string = prompt("Please select between Rock, Papper or Scissors");
+                let string = prompt("Please select between Rock, Paper or Scissors");
                 return upperCase = string.charAt(0).toUpperCase() + string.slice(1).toLowerCase();
             }
 
